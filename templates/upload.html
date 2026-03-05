@@ -1,43 +1,50 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-    <h2>Upload your datasets</h2>
+    <h2 class="mb-4">Upload your datasets</h2>
+    <p class="text-muted">Upload CSV or Excel files (.csv, .xlsx, .xls). Analysis will run automatically, then you'll see the dashboard.</p>
     <form id="uploadForm" action="/upload/" method="post" enctype="multipart/form-data">
-        <input type="file" name="files" multiple required>
-        <input type="submit" value="Upload" class="btn btn-primary">
+        <div class="mb-3">
+            <input type="file" name="files" multiple accept=".csv,.xlsx,.xls" required class="form-control">
+        </div>
+        <button type="submit" id="submitBtn" class="btn btn-primary">Upload &amp; Analyze</button>
     </form>
 
-    <div id="loader" style="display:none;">
-        <p>Analyzing datasets, please wait...</p>
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
+    <div id="loader" class="text-center py-5" style="display:none;">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+        <p class="mt-3 mb-0 text-primary">Uploading and analyzing your data…</p>
+        <p class="small text-muted">You will be redirected to the dashboard when done.</p>
     </div>
+    <div id="uploadError" class="alert alert-danger mt-3" style="display:none;"></div>
 </div>
 
 <script>
-const form = document.getElementById('uploadForm');
-form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // prevent default form submit
+document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
     const loader = document.getElementById('loader');
+    const submitBtn = document.getElementById('submitBtn');
+    const errEl = document.getElementById('uploadError');
+    errEl.style.display = 'none';
+    submitBtn.disabled = true;
     loader.style.display = 'block';
 
-    const formData = new FormData(form);
-    const response = await fetch('/upload/', {
-        method: 'POST',
-        body: formData
-    });
-
-    if(response.ok){
-        // Simulate analysis delay (replace with actual analysis call)
-        const analyzeResponse = await fetch('/analyze/', {method: 'POST'});
-        if(analyzeResponse.ok){
-            // Redirect to dashboard when analysis completes
-            window.location.href = '/dashboard/';
+    try {
+        const formData = new FormData(form);
+        const response = await fetch('/upload/', { method: 'POST', body: formData });
+        if (!response.ok) {
+            throw new Error('Upload failed. Please try again.');
         }
-    } else {
-        alert("Upload failed. Please try again.");
+        const analyzeResponse = await fetch('/analyze/', { method: 'POST' });
+        if (!analyzeResponse.ok) {
+            throw new Error('Analysis failed. Please try again.');
+        }
+        window.location.href = '/dashboard/';
+    } catch (err) {
         loader.style.display = 'none';
+        submitBtn.disabled = false;
+        errEl.textContent = err.message || 'Something went wrong.';
+        errEl.style.display = 'block';
     }
 });
 </script>

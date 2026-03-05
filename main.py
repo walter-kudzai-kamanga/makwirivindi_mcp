@@ -13,3 +13,8 @@ app.include_router(analyze_router.router)
 @app.get("/")
 def home():
     return {"message": "Welcome to AI Data Analytics MCP"}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
