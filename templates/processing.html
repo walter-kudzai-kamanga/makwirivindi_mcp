@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Processing datasets...</h2>
+<p>Please wait while the data is being analyzed.</p>
+<div id="loader">⏳ Analyzing...</div>
+
+<script>
+const files = {{ files | tojson }};
+console.log("Files to analyze:", files);
+
+// Simulate calling /analyze endpoint
+fetch("/analyze/", {
+    method: "POST",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({files: files})
+})
+.then(res => res.json())
+.then(data => {
+    console.log("Analysis done:", data);
+    // Redirect to dashboard after analysis
+    window.location.href = "/dashboard/";
+});
+</script>
+{% endblock %}

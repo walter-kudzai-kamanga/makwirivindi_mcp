@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Upload your datasets</h2>
+    <form id="uploadForm" action="/upload/" method="post" enctype="multipart/form-data">
+        <input type="file" name="files" multiple required>
+        <input type="submit" value="Upload" class="btn btn-primary">
+    </form>
+
+    <div id="loader" style="display:none;">
+        <p>Analyzing datasets, please wait...</p>
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+
+<script>
+const form = document.getElementById('uploadForm');
+form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // prevent default form submit
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block';
+
+    const formData = new FormData(form);
+    const response = await fetch('/upload/', {
+        method: 'POST',
+        body: formData
+    });
+
+    if(response.ok){
+        // Simulate analysis delay (replace with actual analysis call)
+        const analyzeResponse = await fetch('/analyze/', {method: 'POST'});
+        if(analyzeResponse.ok){
+            // Redirect to dashboard when analysis completes
+            window.location.href = '/dashboard/';
+        }
+    } else {
+        alert("Upload failed. Please try again.");
+        loader.style.display = 'none';
+    }
+});
+</script>
+{% endblock %}

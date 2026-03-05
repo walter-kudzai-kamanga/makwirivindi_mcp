@@ -1,0 +1,15 @@
+from fastapi import FastAPI
+from routers import upload_router, dashboard_router, ai_router, analyze_router
+from fastapi.staticfiles import StaticFiles
+
+
+app = FastAPI()
+
+app.include_router(upload_router.router, prefix="/upload")
+app.mount("/static", StaticFiles(directory="static"), name="static")
+app.include_router(dashboard_router.router, prefix="/dashboard")
+app.include_router(ai_router.router, prefix="/ai")
+app.include_router(analyze_router.router)
+@app.get("/")
+def home():
+    return {"message": "Welcome to AI Data Analytics MCP"}

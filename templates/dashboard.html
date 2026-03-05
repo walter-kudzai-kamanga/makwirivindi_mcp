@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Dashboard</h2>
+
+    <!-- Charts -->
+    <div id="charts" class="mb-4">
+        <canvas id="chart1" width="400" height="200"></canvas>
+    </div>
+
+    <!-- AI Insights -->
+    <div id="insights" class="card mb-4 p-3">
+        <h4>AI Insights</h4>
+        <ul id="insightsList">
+            {% for insight in insights %}
+                <li>{{ insight }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Predictions -->
+    <div id="predictions" class="card mb-4 p-3">
+        <h4>Predictions</h4>
+        <p id="predictionText">{{ predictions.prediction }}</p>
+    </div>
+
+    <!-- Table of analysis results -->
+    <div id="analysis_table" class="mb-4">
+        <h4>Analysis Results</h4>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Filename</th>
+                <th>Rows</th>
+                <th>Columns</th>
+                <th>Numeric Columns</th>
+                <th>Categorical Columns</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for result in analysis_results %}
+                <tr>
+                    <td>{{ result.filename }}</td>
+                    <td>{{ result.rows }}</td>
+                    <td>{{ result.columns | join(', ') }}</td>
+                    <td>{{ result.numeric | join(', ') }}</td>
+                    <td>{{ result.categorical | join(', ') }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Chart.js for dynamic charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    const ctx = document.getElementById('chart1').getContext('2d');
+
+    // Prepare data dynamically from analysis_results
+    const labels = [{% for result in analysis_results %}'{{ result.filename }}',{% endfor %}];
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Rows per File',
+            data: [{% for result in analysis_results %}{{ result.rows }},{% endfor %}],
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    };
+
+    new Chart(ctx, config);
+});
+</script>
+{% endblock %}
