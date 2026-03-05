@@ -1,0 +1,115 @@
+/* Makwirivindi Analytics Dashboard – branding and layout */
+
+:root {
+    --mw-primary: #1a5f7a;
+    --mw-primary-light: #2d8ba8;
+    --mw-accent: #159895;
+    --mw-bg: #f0f4f8;
+    --mw-card: #ffffff;
+    --mw-text: #2c3e50;
+    --mw-success: #27ae60;
+    --mw-warning: #f39c12;
+    --mw-danger: #e74c3c;
+}
+
+body.dashboard-page {
+    background: var(--mw-bg);
+    color: var(--mw-text);
+}
+
+.dashboard-header {
+    background: linear-gradient(135deg, var(--mw-primary) 0%, var(--mw-accent) 100%);
+    color: white;
+    padding: 1rem 0;
+    margin: -1rem -1rem 1.5rem -1rem;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dashboard-header .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.dashboard-header .logo-img { width: 48px; height: 48px; object-fit: contain; }
+.dashboard-header .logo {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.dashboard-header .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.dashboard-header .user-info {
+    margin-left: auto;
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+.dashboard-header .date-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.dashboard-header .date-filter input, .dashboard-header .date-filter select {
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.dashboard-header .date-filter option { background: var(--mw-primary); color: white; }
+
+/* KPI cards */
+.kpi-card {
+    border-radius: 10px;
+    border-left: 4px solid var(--mw-primary);
+    transition: transform 0.15s ease;
+}
+
+.kpi-card:hover { transform: translateY(-2px); }
+
+.kpi-card.status-green { border-left-color: var(--mw-success); }
+.kpi-card.status-yellow { border-left-color: var(--mw-warning); }
+.kpi-card.status-red { border-left-color: var(--mw-danger); }
+
+.kpi-card .card-body { padding: 1rem; }
+.kpi-card .kpi-value { font-size: 1.75rem; font-weight: 700; color: var(--mw-primary); }
+.kpi-card .kpi-label { font-size: 0.85rem; color: #6c757d; margin-top: 0.25rem; }
+
+/* Dataset table expand */
+.dataset-table .expand-row { cursor: pointer; }
+.dataset-table .expand-row:hover { background: rgba(26, 95, 122, 0.06); }
+.dataset-table .preview-table { font-size: 0.8rem; max-height: 200px; overflow: auto; }
+.dataset-table .btn-group .btn { padding: 0.25rem 0.5rem; font-size: 0.875rem; }
+
+/* Chart containers */
+.chart-wrap { position: relative; height: 280px; }
+.chart-wrap canvas { max-height: 280px; }
+
+/* Tabs */
+.nav-tabs .nav-link { color: var(--mw-primary); border: none; border-bottom: 2px solid transparent; }
+.nav-tabs .nav-link.active { font-weight: 600; border-bottom-color: var(--mw-primary); color: var(--mw-text); }
+.nav-tabs .nav-link:hover { border-bottom-color: var(--mw-primary-light); }
+
+/* Export / filters bar */
+.filters-bar { background: var(--mw-card); padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.filters-bar select { max-width: 200px; }
+
+/* Map */
+#map { min-height: 350px; border-radius: 8px; }
