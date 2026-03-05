@@ -1,4 +1,4 @@
-#!/Users/user/Desktop/analytics_mcp/venv/bin/python3.11
+#!/home/deuce/makwirivindi_mcp/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
