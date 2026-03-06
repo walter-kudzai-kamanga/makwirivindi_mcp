@@ -18,7 +18,7 @@ def _dataset_display_name(filename: str) -> str:
     return stem.replace("_", " ").replace("-", " ").title()
 
 
-@router.get("/", response_class=None)
+@router.get("/", response_class=HTMLResponse)
 def dashboard(request: Request):
     analysis_results = get_analysis_results()
     seen = set()

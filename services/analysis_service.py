@@ -1,4 +1,5 @@
 from pathlib import Path
+import warnings
 import pandas as pd
 import numpy as np
 
@@ -31,7 +32,9 @@ def _detect_date_column(df: pd.DataFrame):
         try:
             if df[col].dropna().empty:
                 continue
-            pd.to_datetime(df[col], errors="coerce")
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore", UserWarning)
+                pd.to_datetime(df[col], errors="coerce")
             if df[col].astype(str).str.match(r"^\d{4}-\d{2}-\d{2}|^\d{2}/\d{2}/\d{4}").any():
                 return col
         except Exception:
