@@ -1,0 +1,7 @@
+student_id,incident_type,severity_level,date,action_taken,repeat_offender
+STD1003,Academic Dishonesty,Low,2025-09-23,Counselling,No
+STD1009,Academic Dishonesty,Medium,2025-10-10,Counselling,No
+STD1015,Academic Dishonesty,Medium,2025-08-13,Warning,No
+STD1024,Academic Dishonesty,Low,2025-06-01,Counselling,Yes
+STD1028,Misconduct,High,2025-11-15,Counselling,No
+STD1034,Drugs,Medium,2025-12-01,Warning,Yes

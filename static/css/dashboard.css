@@ -20,18 +20,33 @@ body.dashboard-page {
 .dashboard-header {
     background: linear-gradient(135deg, var(--mw-primary) 0%, var(--mw-accent) 100%);
     color: white;
-    padding: 1rem 0;
+    padding: 1rem 0.75rem 0.75rem;
     /* Extend header to viewport edges (matches Bootstrap gutter). */
     margin: -0.75rem -0.75rem 1.5rem -0.75rem;
     border-radius: 0 0 12px 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.dashboard-header .brand {
+/* New header layout */
+.dashboard-header__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.dashboard-brand {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 0.85rem;
+    min-width: 260px;
+}
+
+.dashboard-brand__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .dashboard-header .logo-img { width: 48px; height: 48px; object-fit: contain; }
@@ -48,33 +63,67 @@ body.dashboard-page {
 }
 
 .dashboard-header .title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     margin: 0;
 }
 
-.dashboard-header .user-info {
-    margin-left: auto;
+.dashboard-brand__text .subtitle {
     font-size: 0.9rem;
-    opacity: 0.95;
+    opacity: 0.9;
+    margin-top: 0.1rem;
 }
 
-.dashboard-header .date-filter {
+.dashboard-header__meta {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
-.dashboard-header .date-filter input, .dashboard-header .date-filter select {
+.meta-chip {
+    padding: 0.35rem 0.55rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.12);
+    border-radius: 10px;
+    line-height: 1.1;
+}
+.meta-chip__label { font-size: 0.7rem; opacity: 0.85; }
+.meta-chip__value { font-size: 0.85rem; font-weight: 600; }
+
+.header-actions { display: flex; gap: 0.5rem; }
+
+/* Controls row */
+.dashboard-controls {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-end;
+}
+.control-group { display: flex; flex-direction: column; gap: 0.25rem; }
+.control-label { font-size: 0.75rem; opacity: 0.9; }
+.control-input {
+    min-width: 170px;
     padding: 0.35rem 0.5rem;
-    border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.28);
+    background: rgba(255,255,255,0.12);
     color: white;
 }
+.dashboard-controls option { background: var(--mw-primary); color: white; }
+.control-group--dataset .control-input { min-width: 240px; }
 
-.dashboard-header .date-filter option { background: var(--mw-primary); color: white; }
+@media (max-width: 576px) {
+    .control-input { min-width: 140px; }
+    .control-group--dataset .control-input { min-width: 220px; }
+}
+
+/* Keep legacy date-filter styles harmless if present */
+.dashboard-header .date-filter { display: none; }
 
 /* KPI cards */
 .kpi-card {
@@ -94,9 +143,12 @@ body.dashboard-page {
 .kpi-card .kpi-label { font-size: 0.75rem; color: #6c757d; margin-top: 0.15rem; }
 
 /* Make the top KPI row more compact on all screens */
-.kpi-card { min-height: 78px; }
+.kpi-card .card-body { padding: 0.5rem 0.6rem; }
+.kpi-card .kpi-value { font-size: 1.1rem; }
+.kpi-card .kpi-label { font-size: 0.72rem; }
+.kpi-card { min-height: 64px; }
 @media (min-width: 992px) {
-    .kpi-card { min-height: 72px; }
+    .kpi-card { min-height: 60px; }
 }
 
 /* Dataset table expand */

@@ -13,14 +13,16 @@
   <!-- 1. Header / Branding -->
   <div class="dashboard-header">
     <div class="brand">
-      <img src="/static/logo.png" alt="Logo" class="logo-img" style="display:none" onload="this.style.display='block'; var n=this.nextElementSibling; if(n) n.style.display='none';" onerror="var n=this.nextElementSibling; if(n) n.style.display='flex';">
+      <img src="/static/logo.png?v={{ logo_mtime }}" alt="Company logo" class="logo-img" style="display:none" onload="this.style.display='block'; var n=this.nextElementSibling; if(n) n.style.display='none';" onerror="var n=this.nextElementSibling; if(n) n.style.display='flex';">
       <div class="logo" aria-hidden="true">M</div>
       <div>
         <h1 class="title">Makwirivindi Analytics Dashboard</h1>
         <p class="mb-0 small opacity-90">Data analytics and insights</p>
       </div>
-      <div class="user-info ms-auto text-end">
-        <span>Guest</span>
+      <div class="user-info ms-auto d-flex align-items-center gap-2">
+        <a href="/settings/" class="btn btn-sm btn-outline-light">Settings</a>
+        <a href="/upload/" class="btn btn-sm btn-light">Upload</a>
+        <span class="opacity-90">Guest</span>
       </div>
     </div>
     <div class="date-filter">
@@ -58,72 +60,14 @@
               <a class="nav-link sidebar-link" href="#" data-dataset-file="{{ ds.filename }}">{{ ds.display }}</a>
             </li>
             {% endfor %}
-          </ul>
-        </div>
+        </ul>
+    </div>
       </nav>
     </aside>
 
     <main class="col-lg-9 col-xl-10 dashboard-main">
   <!-- 2. Summary Cards / KPIs -->
-  <div class="row g-3 mb-4">
-    <div class="col-6 col-md-4 col-lg-2">
-      <div class="card kpi-card h-100">
-        <div class="card-body">
-          <div class="kpi-value">{{ kpis.total_datasets }}</div>
-          <div class="kpi-label">Datasets</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-2">
-      <div class="card kpi-card h-100">
-        <div class="card-body">
-          <div class="kpi-value">{{ kpis.total_rows }}</div>
-          <div class="kpi-label">Total rows</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-2">
-      <div class="card kpi-card h-100">
-        <div class="card-body">
-          <div class="kpi-value">{{ kpis.total_columns }}</div>
-          <div class="kpi-label">Total columns</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-2">
-      <div class="card kpi-card h-100">
-        <div class="card-body">
-          <div class="kpi-value">{{ kpis.total_numeric }} / {{ kpis.total_categorical }}</div>
-          <div class="kpi-label">Numeric / Categorical</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-2">
-      <div class="card kpi-card status-{{ kpis.status_missing }} h-100">
-        <div class="card-body">
-          <div class="kpi-value">{{ kpis.overall_missing_pct }}%</div>
-          <div class="kpi-label">Missing data</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-2">
-      <div class="card kpi-card status-{{ kpis.status_duplicates }} h-100">
-        <div class="card-body">
-          <div class="kpi-value">{{ kpis.total_duplicates }}</div>
-          <div class="kpi-label">Duplicate rows</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-2">
-      <div class="card kpi-card status-{{ kpis.status_anomaly }} h-100">
-        <div class="card-body">
-          <div class="kpi-value">{{ kpis.anomaly_count }}</div>
-          <div class="kpi-label">Anomalies</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+ 
   <!-- Tabs: Overview | Insights | Predictions | Raw Data -->
   <ul class="nav nav-tabs mb-3" role="tablist">
     <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab-overview">Overview</a></li>
@@ -220,7 +164,7 @@
         </div>
         {% endif %}
         {% endfor %}
-      </div>
+    </div>
 
       {% set has_geo = namespace(val=false) %}
       {% for result in analysis_results %}
@@ -252,7 +196,7 @@
         <div class="card-body p-0 overflow-auto">
           <table class="table table-hover dataset-table mb-0">
             <thead>
-              <tr>
+            <tr>
                 <th style="width:2rem;"></th>
                 <th>Filename</th>
                 <th>Rows</th>
@@ -262,14 +206,14 @@
                 <th>Missing</th>
                 <th>Duplicates</th>
                 <th>Actions</th>
-              </tr>
+            </tr>
             </thead>
             <tbody>
-              {% for result in analysis_results %}
+            {% for result in analysis_results %}
               <tr class="expand-row" data-idx="{{ loop.index0 }}" data-dataset-filename="{{ result.filename }}">
                 <td><span class="expand-icon">▶</span></td>
                 <td>{{ result.filename }}{% if result.sheet and result.sheet != 'data' %} <small>({{ result.sheet }})</small>{% endif %}</td>
-                <td>{{ result.rows }}</td>
+                    <td>{{ result.rows }}</td>
                 <td>{{ result.columns | join(', ') | truncate(40) }}</td>
                 <td>{{ result.numeric | join(', ') | truncate(30) or '—' }}</td>
                 <td>{{ result.categorical | join(', ') | truncate(30) or '—' }}</td>
@@ -301,10 +245,10 @@
                   <p class="mb-0 text-muted">No preview.</p>
                   {% endif %}
                 </td>
-              </tr>
-              {% endfor %}
+                </tr>
+            {% endfor %}
             </tbody>
-          </table>
+        </table>
         </div>
       </div>
     </div>
@@ -344,7 +288,7 @@
     </main>
   </div>
   {% endif %}
-</div>
+    </div>
 
 <script>
 (function() {

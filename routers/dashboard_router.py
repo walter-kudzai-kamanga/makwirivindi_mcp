@@ -1,15 +1,17 @@
 from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from pathlib import Path
+from datetime import datetime
 
 from services.ai_service import generate_insights
 from services.analysis_service import get_analysis_results, get_dashboard_summary
-from pathlib import Path
 from services.prediction_service import predict_trends
-from datetime import datetime
 
 router = APIRouter()
+LOGO_PATH = Path("static") / "logo.png"
 templates = Jinja2Templates(directory="templates")
+templates.env.filters["intcomma"] = lambda x: f"{int(x):,}" if x is not None else "0"
 
 
 def _dataset_display_name(filename: str) -> str:
@@ -33,6 +35,7 @@ def dashboard(request: Request):
     kpis = get_dashboard_summary(analysis_results)
     insights = generate_insights(analysis_results)
     predictions = predict_trends(analysis_results)
+    logo_mtime = int(LOGO_PATH.stat().st_mtime) if LOGO_PATH.exists() else 0
     return templates.TemplateResponse("dashboard.html", {
         "request": request,
         "analysis_results": analysis_results,
@@ -41,4 +44,5 @@ def dashboard(request: Request):
         "insights": insights,
         "predictions": predictions,
         "now": datetime.utcnow(),
+        "logo_mtime": logo_mtime,
     })

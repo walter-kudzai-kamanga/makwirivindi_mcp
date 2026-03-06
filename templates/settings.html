@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Company settings – Makwirivindi{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/css/dashboard.css">
+<style>
+.settings-page { max-width: 480px; margin: 2rem auto; }
+.settings-card { background: var(--mw-card); border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); overflow: hidden; }
+.settings-card__header { background: linear-gradient(135deg, var(--mw-primary) 0%, var(--mw-accent) 100%); color: white; padding: 1.25rem 1.5rem; }
+.settings-card__header h1 { font-size: 1.25rem; margin: 0; font-weight: 700; }
+.settings-card__body { padding: 1.5rem; }
+.logo-preview { width: 80px; height: 80px; object-fit: contain; border-radius: 8px; background: #f1f5f9; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 0.35rem; font-size: 0.9rem; }
+.access-note { font-size: 0.85rem; color: #64748b; margin-top: 0.5rem; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-3 settings-page">
+  <div class="settings-card">
+    <div class="settings-card__header">
+      <h1>Company settings</h1>
+    </div>
+    <div class="settings-card__body">
+      <form action="/settings/logo" method="post" enctype="multipart/form-data">
+        {% if require_access_key %}
+        <div class="form-group">
+          <label for="access_key">Access key</label>
+          <input type="password" name="access_key" id="access_key" class="form-control" required placeholder="Enter access key">
+          <p class="access-note">Required to update company settings.</p>
+        </div>
+        {% endif %}
+
+        <div class="form-group">
+          <label>Company logo</label>
+          {% if logo_exists %}
+          <div class="mb-2">
+            <img src="/static/logo.png?v={{ logo_mtime }}" alt="Logo" class="logo-preview">
+          </div>
+          {% endif %}
+          <input type="file" name="logo" accept=".png,.jpg,.jpeg,.svg,.webp" class="form-control">
+          <p class="access-note mt-1">PNG, JPG, SVG or WebP. Shown on the dashboard.</p>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-primary">Save logo</button>
+          <a href="/dashboard/" class="btn btn-outline-secondary">Back to dashboard</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,373 @@
+student_id,semester,course_name
+STD1000,1,Calculus II
+STD1000,1,Biology II
+STD1000,1,Digital Systems
+STD1000,1,Data Structures
+STD1000,2,Digital Systems
+STD1000,2,Biology I
+STD1000,2,Graphic Design
+STD1000,2,English Composition
+STD1000,2,Ethics
+STD1001,1,Creative Writing
+STD1001,1,Data Structures
+STD1001,1,Statistics
+STD1001,1,Calculus I
+STD1001,1,Programming II
+STD1001,2,Biology II
+STD1001,2,Accounting II
+STD1001,2,Statistics
+STD1002,1,Operating Systems
+STD1002,1,Discrete Mathematics
+STD1002,1,Biology II
+STD1002,2,Discrete Mathematics
+STD1002,2,Algorithms
+STD1002,2,Technical Writing
+STD1002,2,English Composition
+STD1002,2,Digital Systems
+STD1002,2,Finance Fundamentals
+STD1003,1,Marketing Principles
+STD1003,1,Accounting I
+STD1003,1,Technical Writing
+STD1003,1,Creative Writing
+STD1003,1,Linear Algebra
+STD1003,2,Technical Writing
+STD1003,2,Data Structures
+STD1003,2,Algorithms
+STD1003,2,World History
+STD1003,2,Calculus II
+STD1003,2,Chemistry I
+STD1004,1,Sociology
+STD1004,1,Graphic Design
+STD1004,1,Art History
+STD1004,2,Project Management
+STD1004,2,Art History
+STD1004,2,Programming II
+STD1004,2,Operating Systems
+STD1004,2,Algorithms
+STD1004,2,Physics I
+STD1005,1,Introduction to Psychology
+STD1005,1,Art History
+STD1005,1,Algorithms
+STD1005,1,Digital Systems
+STD1005,1,Calculus I
+STD1005,2,Biology II
+STD1005,2,Data Structures
+STD1005,2,Macroeconomics
+STD1005,2,Accounting I
+STD1005,2,Marketing Principles
+STD1006,1,Art History
+STD1006,1,Accounting I
+STD1006,1,Calculus II
+STD1006,2,Introduction to Psychology
+STD1006,2,Macroeconomics
+STD1006,2,Creative Writing
+STD1006,2,Accounting I
+STD1006,2,Statistics
+STD1006,2,Chemistry II
+STD1007,1,Physics I
+STD1007,1,Marketing Principles
+STD1007,1,Environmental Science
+STD1007,1,Accounting II
+STD1007,1,Graphic Design
+STD1007,2,Graphic Design
+STD1007,2,Accounting II
+STD1007,2,Human Anatomy
+STD1007,2,Art History
+STD1007,2,Philosophy
+STD1008,1,Sociology
+STD1008,1,Operating Systems
+STD1008,1,Technical Writing
+STD1008,2,Macroeconomics
+STD1008,2,Accounting II
+STD1008,2,Marketing Principles
+STD1008,2,Finance Fundamentals
+STD1009,1,Database Systems
+STD1009,1,English Composition
+STD1009,1,Microeconomics
+STD1009,1,Marketing Principles
+STD1009,2,Finance Fundamentals
+STD1009,2,Accounting II
+STD1009,2,Calculus II
+STD1009,2,Linear Algebra
+STD1010,1,Physics II
+STD1010,1,Creative Writing
+STD1010,1,Discrete Mathematics
+STD1010,2,Statistics
+STD1010,2,English Composition
+STD1010,2,Algorithms
+STD1010,2,Programming II
+STD1011,1,Algorithms
+STD1011,1,Graphic Design
+STD1011,1,Discrete Mathematics
+STD1011,1,Accounting I
+STD1011,1,Data Structures
+STD1011,2,Algorithms
+STD1011,2,Calculus I
+STD1011,2,Linear Algebra
+STD1011,2,Programming I
+STD1011,2,Chemistry I
+STD1011,2,Marketing Principles
+STD1012,1,Sociology
+STD1012,1,Biology II
+STD1012,1,Biology I
+STD1012,2,Art History
+STD1012,2,Biology II
+STD1012,2,Sociology
+STD1013,1,Chemistry I
+STD1013,1,Database Systems
+STD1013,1,Introduction to Psychology
+STD1013,1,Creative Writing
+STD1013,2,Graphic Design
+STD1013,2,Discrete Mathematics
+STD1013,2,Calculus I
+STD1013,2,World History
+STD1013,2,Digital Systems
+STD1013,2,Database Systems
+STD1014,1,Sociology
+STD1014,1,Environmental Science
+STD1014,1,Digital Systems
+STD1014,1,Calculus II
+STD1014,1,Biology I
+STD1014,2,Database Systems
+STD1014,2,Chemistry II
+STD1014,2,Digital Systems
+STD1015,1,Programming II
+STD1015,1,Linear Algebra
+STD1015,1,Data Structures
+STD1015,1,Digital Systems
+STD1015,2,English Composition
+STD1015,2,Finance Fundamentals
+STD1015,2,Digital Systems
+STD1015,2,Technical Writing
+STD1016,1,Database Systems
+STD1016,1,Biology I
+STD1016,1,Chemistry II
+STD1016,1,Macroeconomics
+STD1016,1,Environmental Science
+STD1016,1,Technical Writing
+STD1016,2,Art History
+STD1016,2,Calculus I
+STD1016,2,Introduction to Psychology
+STD1016,2,Biology I
+STD1017,1,English Composition
+STD1017,1,Finance Fundamentals
+STD1017,1,Project Management
+STD1017,1,Linear Algebra
+STD1017,1,Human Anatomy
+STD1017,1,Data Structures
+STD1017,2,Introduction to Psychology
+STD1017,2,Accounting II
+STD1017,2,Statistics
+STD1017,2,Finance Fundamentals
+STD1017,2,Philosophy
+STD1018,1,Calculus II
+STD1018,1,Chemistry I
+STD1018,1,Accounting I
+STD1018,1,Operating Systems
+STD1018,1,Project Management
+STD1018,2,Philosophy
+STD1018,2,Creative Writing
+STD1018,2,Digital Systems
+STD1018,2,Ethics
+STD1019,1,Creative Writing
+STD1019,1,Discrete Mathematics
+STD1019,1,Philosophy
+STD1019,1,Accounting II
+STD1019,1,Physics I
+STD1019,1,Graphic Design
+STD1019,2,Marketing Principles
+STD1019,2,Graphic Design
+STD1019,2,Art History
+STD1019,2,Physics II
+STD1020,1,Sociology
+STD1020,1,Creative Writing
+STD1020,1,Accounting II
+STD1020,1,Physics II
+STD1020,2,Physics II
+STD1020,2,Accounting I
+STD1020,2,Philosophy
+STD1020,2,Statistics
+STD1020,2,Environmental Science
+STD1020,2,Operating Systems
+STD1021,1,Algorithms
+STD1021,1,Calculus I
+STD1021,1,Programming II
+STD1021,2,Data Structures
+STD1021,2,Linear Algebra
+STD1021,2,Chemistry II
+STD1022,1,Introduction to Psychology
+STD1022,1,Accounting II
+STD1022,1,Operating Systems
+STD1022,1,Ethics
+STD1022,1,World History
+STD1022,1,Creative Writing
+STD1022,2,World History
+STD1022,2,Creative Writing
+STD1022,2,Sociology
+STD1022,2,Accounting I
+STD1022,2,Data Structures
+STD1023,1,Macroeconomics
+STD1023,1,Sociology
+STD1023,1,Ethics
+STD1023,1,Operating Systems
+STD1023,1,Philosophy
+STD1023,1,Linear Algebra
+STD1023,2,Data Structures
+STD1023,2,Graphic Design
+STD1023,2,Introduction to Psychology
+STD1024,1,Human Anatomy
+STD1024,1,Chemistry I
+STD1024,1,Chemistry II
+STD1024,1,Programming II
+STD1024,1,Linear Algebra
+STD1024,2,Accounting II
+STD1024,2,Marketing Principles
+STD1024,2,Operating Systems
+STD1025,1,English Composition
+STD1025,1,Accounting I
+STD1025,1,Ethics
+STD1025,1,Sociology
+STD1025,1,Linear Algebra
+STD1025,1,Creative Writing
+STD1025,2,Discrete Mathematics
+STD1025,2,Human Anatomy
+STD1025,2,Biology I
+STD1025,2,Programming I
+STD1025,2,Biology II
+STD1025,2,Calculus II
+STD1026,1,Statistics
+STD1026,1,Macroeconomics
+STD1026,1,Operating Systems
+STD1026,1,Graphic Design
+STD1026,1,Discrete Mathematics
+STD1026,2,Environmental Science
+STD1026,2,Calculus I
+STD1026,2,Database Systems
+STD1026,2,Physics I
+STD1027,1,Physics II
+STD1027,1,Accounting II
+STD1027,1,Graphic Design
+STD1027,1,Digital Systems
+STD1027,1,Accounting I
+STD1027,1,Chemistry I
+STD1027,2,Linear Algebra
+STD1027,2,Accounting II
+STD1027,2,Physics II
+STD1027,2,Chemistry II
+STD1028,1,Discrete Mathematics
+STD1028,1,Microeconomics
+STD1028,1,Calculus II
+STD1028,2,Microeconomics
+STD1028,2,Macroeconomics
+STD1028,2,Ethics
+STD1028,2,Marketing Principles
+STD1028,2,Programming I
+STD1029,1,Graphic Design
+STD1029,1,Introduction to Psychology
+STD1029,1,Algorithms
+STD1029,2,Art History
+STD1029,2,Chemistry II
+STD1029,2,Macroeconomics
+STD1029,2,Accounting I
+STD1029,2,Accounting II
+STD1029,2,World History
+STD1030,1,Accounting I
+STD1030,1,Chemistry I
+STD1030,1,Creative Writing
+STD1030,1,Data Structures
+STD1030,1,Project Management
+STD1030,1,Microeconomics
+STD1030,2,Graphic Design
+STD1030,2,Macroeconomics
+STD1030,2,Finance Fundamentals
+STD1030,2,Chemistry I
+STD1030,2,Chemistry II
+STD1030,2,Digital Systems
+STD1031,1,Graphic Design
+STD1031,1,Database Systems
+STD1031,1,Creative Writing
+STD1031,1,Project Management
+STD1031,1,Microeconomics
+STD1031,1,Sociology
+STD1031,2,Creative Writing
+STD1031,2,Sociology
+STD1031,2,Linear Algebra
+STD1031,2,Introduction to Psychology
+STD1032,1,Sociology
+STD1032,1,Introduction to Psychology
+STD1032,1,Graphic Design
+STD1032,1,Philosophy
+STD1032,1,Technical Writing
+STD1032,2,Environmental Science
+STD1032,2,Graphic Design
+STD1032,2,Art History
+STD1032,2,Physics I
+STD1032,2,Ethics
+STD1033,1,Chemistry I
+STD1033,1,Accounting I
+STD1033,1,Accounting II
+STD1033,2,English Composition
+STD1033,2,Operating Systems
+STD1033,2,Finance Fundamentals
+STD1033,2,Algorithms
+STD1034,1,Physics II
+STD1034,1,Calculus II
+STD1034,1,Data Structures
+STD1034,1,Operating Systems
+STD1034,1,Discrete Mathematics
+STD1034,1,Database Systems
+STD1034,2,Art History
+STD1034,2,Linear Algebra
+STD1034,2,Project Management
+STD1034,2,Environmental Science
+STD1034,2,Discrete Mathematics
+STD1034,2,Macroeconomics
+STD1035,1,Art History
+STD1035,1,Algorithms
+STD1035,1,Creative Writing
+STD1035,2,Discrete Mathematics
+STD1035,2,Operating Systems
+STD1035,2,Human Anatomy
+STD1035,2,Statistics
+STD1035,2,Algorithms
+STD1036,1,Human Anatomy
+STD1036,1,Calculus II
+STD1036,1,Art History
+STD1036,1,Data Structures
+STD1036,1,Technical Writing
+STD1036,1,Philosophy
+STD1036,2,Programming II
+STD1036,2,Physics II
+STD1036,2,Macroeconomics
+STD1036,2,World History
+STD1036,2,Introduction to Psychology
+STD1037,1,Programming II
+STD1037,1,Technical Writing
+STD1037,1,Statistics
+STD1037,1,Data Structures
+STD1037,1,Chemistry II
+STD1037,1,Marketing Principles
+STD1037,2,Introduction to Psychology
+STD1037,2,Operating Systems
+STD1037,2,Technical Writing
+STD1037,2,Philosophy
+STD1037,2,Macroeconomics
+STD1038,1,Physics I
+STD1038,1,Chemistry II
+STD1038,1,Operating Systems
+STD1038,1,Philosophy
+STD1038,1,Calculus I
+STD1038,2,Microeconomics
+STD1038,2,Philosophy
+STD1038,2,Chemistry I
+STD1038,2,Marketing Principles
+STD1039,1,Biology I
+STD1039,1,Linear Algebra
+STD1039,1,Data Structures
+STD1039,1,Accounting I
+STD1039,1,Macroeconomics
+STD1039,2,Statistics
+STD1039,2,Macroeconomics
+STD1039,2,Environmental Science
+STD1039,2,Programming I
+STD1039,2,Data Structures
