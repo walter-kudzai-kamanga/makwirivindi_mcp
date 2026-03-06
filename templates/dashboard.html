@@ -342,6 +342,8 @@
     </div>
   </div>
 
+    </main>
+  </div>
   {% endif %}
 </div>
 
@@ -498,7 +500,33 @@
     }
   }
 
-  // Dataset filter: show/hide charts by dataset
+  // Sidebar: filter by dataset (category)
+  function setSidebarFilter(filename) {
+    document.querySelectorAll('.sidebar-link').forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('data-dataset-file') === filename);
+    });
+    document.querySelectorAll('.chart-container').forEach(function(el) {
+      const f = el.getAttribute('data-dataset-filename');
+      el.style.display = (filename === '' || f === filename) ? '' : 'none';
+    });
+    document.querySelectorAll('.expand-row, .preview-row').forEach(function(row) {
+      const f = row.getAttribute('data-dataset-filename');
+      row.style.display = (filename === '' || f === filename) ? '' : 'none';
+    });
+    const mapEl = document.querySelector('.map-container');
+    if (mapEl) {
+      const files = (mapEl.getAttribute('data-dataset-filenames') || '').split(',');
+      mapEl.style.display = (filename === '' || files.indexOf(filename) !== -1) ? '' : 'none';
+    }
+  }
+  document.querySelectorAll('.sidebar-link').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      setSidebarFilter(this.getAttribute('data-dataset-file') || '');
+    });
+  });
+
+  // Filters bar dropdown: show/hide charts by dataset index
   function applyChartFilter() {
     const sel = document.getElementById('chartDatasetFilter');
     const val = sel ? sel.value : '';

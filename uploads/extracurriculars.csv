@@ -1,0 +1,18 @@
+student_id,activity_name,activity_type,position,awards,hours_spent,start_date,end_date
+STD1001,Chess,Cultural,President,Best Performer,120,2024-10-02,2025-11-21
+STD1005,Volunteering,Leadership,Secretary,Best Performer,91,2024-02-27,2025-11-29
+STD1008,Music Band,Social,President,Best Performer,27,2025-02-23,2025-11-22
+STD1009,Volunteering,Social,Member,None,68,2024-06-11,2025-11-28
+STD1010,Music Band,Social,Captain,Best Performer,46,2024-06-29,2025-11-28
+STD1011,Coding Club,Technical,Secretary,Team Award,19,2025-02-15,2025-12-04
+STD1013,Music Band,Social,Secretary,Best Performer,23,2024-08-29,2025-11-19
+STD1020,Coding Club,Social,Captain,Team Award,165,2025-05-25,2025-11-29
+STD1021,Chess,Technical,Secretary,Team Award,120,2024-12-29,2025-12-04
+STD1022,Coding Club,Social,Member,Team Award,17,2024-07-06,2025-11-23
+STD1023,Music Band,Leadership,Captain,Best Performer,91,2024-01-12,2025-11-15
+STD1025,Volunteering,Social,Secretary,Team Award,173,2024-03-10,2025-11-07
+STD1026,Coding Club,Cultural,President,Team Award,184,2024-11-02,2025-12-01
+STD1030,Volunteering,Cultural,President,Team Award,5,2025-06-27,2025-11-13
+STD1031,Basketball,Social,Secretary,None,13,2024-12-10,2025-12-02
+STD1036,Chess,Cultural,President,Team Award,168,2024-01-08,2025-11-29
+STD1039,Volunteering,Technical,Captain,None,51,2025-01-29,2025-11-13

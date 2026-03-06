@@ -113,3 +113,17 @@ body.dashboard-page {
 
 /* Map */
 #map { min-height: 350px; border-radius: 8px; }
+
+/* Sidebar navigation */
+.dashboard-layout { align-items: start; }
+.dashboard-sidebar { position: sticky; top: 1rem; }
+.dashboard-nav .card { border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
+.dashboard-nav .nav-link {
+    color: var(--mw-text);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+}
+.dashboard-nav .nav-link:hover { background: rgba(26, 95, 122, 0.08); color: var(--mw-primary); }
+.dashboard-nav .nav-link.active { background: var(--mw-primary); color: white; }
+.dashboard-main { min-width: 0; }
