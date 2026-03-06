@@ -21,7 +21,8 @@ body.dashboard-page {
     background: linear-gradient(135deg, var(--mw-primary) 0%, var(--mw-accent) 100%);
     color: white;
     padding: 1rem 0;
-    margin: -1rem -1rem 1.5rem -1rem;
+    /* Extend header to viewport edges (matches Bootstrap gutter). */
+    margin: -0.75rem -0.75rem 1.5rem -0.75rem;
     border-radius: 0 0 12px 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -88,9 +89,15 @@ body.dashboard-page {
 .kpi-card.status-yellow { border-left-color: var(--mw-warning); }
 .kpi-card.status-red { border-left-color: var(--mw-danger); }
 
-.kpi-card .card-body { padding: 1rem; }
-.kpi-card .kpi-value { font-size: 1.75rem; font-weight: 700; color: var(--mw-primary); }
-.kpi-card .kpi-label { font-size: 0.85rem; color: #6c757d; margin-top: 0.25rem; }
+.kpi-card .card-body { padding: 0.6rem 0.75rem; }
+.kpi-card .kpi-value { font-size: 1.25rem; line-height: 1.1; font-weight: 800; color: var(--mw-primary); }
+.kpi-card .kpi-label { font-size: 0.75rem; color: #6c757d; margin-top: 0.15rem; }
+
+/* Make the top KPI row more compact on all screens */
+.kpi-card { min-height: 78px; }
+@media (min-width: 992px) {
+    .kpi-card { min-height: 72px; }
+}
 
 /* Dataset table expand */
 .dataset-table .expand-row { cursor: pointer; }

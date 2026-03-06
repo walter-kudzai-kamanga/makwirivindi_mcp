@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container dashboard-page">
+<div class="container-fluid dashboard-page px-2 px-sm-3 px-lg-4">
   <!-- 1. Header / Branding -->
   <div class="dashboard-header">
     <div class="brand">
@@ -168,7 +168,7 @@
         {% for result in analysis_results %}
         {% for cat in result.chart_data.categorical %}
         {% if cat.labels and cat.values %}
-        <div class="col-lg-6 col-xl-4 mb-4 chart-container" data-dataset-idx="{{ loop.parent.loop.index0 }}" data-dataset-filename="{{ result.filename }}">
+        <div class="col-lg-6 col-xl-4 mb-4 chart-container" data-dataset-filename="{{ result.filename }}">
           <div class="card h-100">
             <div class="card-header">Bar – {{ result.filename }} – {{ cat.column }}</div>
             <div class="card-body chart-wrap">
